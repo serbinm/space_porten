@@ -1,0 +1,1190 @@
+body,
+h1,
+div,
+p,
+span,
+img,
+ul,
+li,
+nav,
+header,
+footer,
+h2,
+h3,
+section,
+article,
+button,
+input,
+a,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  color: white;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Post No Bills Jaffna Bold";
+  src: url('/fonts/post-no-bills/PostNoBillsJaffna-Bold.woff');
+}
+
+@font-face {
+  font-family: 'Post No Bills Jaffna ExtraBold Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/post-no-bills/PostNoBillsJaffna-ExtraBold.woff');
+}
+
+$special-font-family: "PT Sans";
+$special-font-color: #969696;
+$page-text-color: #FFFFFF;
+$title-font-family: "Playfair Display";
+$price-color: #D0D0D0;
+$brightness: 0.6;
+$container: 1115px;
+
+// 375, 768, 1024, 1440, 1920
+
+body {
+  min-width: 375px;
+  background-color: black;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1115px;
+  box-sizing: border-box;
+}
+
+// #region special
+.special {
+  padding: 14px 25px;
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  @media (min-width: 1024px) {
+    padding: 14px 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    &-list {
+      display: flex;
+      list-style: none;
+    }
+
+    &-item {
+      padding: 0 15px;
+      border-right: 1px solid $special-font-color;
+      color: $special-font-color;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+  }
+
+  &__login {
+    display: flex;
+    gap: 19px;
+
+    &-link {
+      text-decoration: none;
+      color: $special-font-color;
+    }
+  }
+}
+
+// #endregion
+
+// #region header
+.header {
+  background-color: #0F0F0F;
+  padding: 0 25px;
+  box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    padding: 0;
+  }
+
+  &__menu-btn {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 80px;
+    box-sizing: border-box;
+  }
+
+  &__logo {
+    font-family: "Post No Bills Jaffna Bold";
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $page-text-color;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    &-item {
+      display: flex;
+      padding: 0 18px;
+      height: 80px;
+      align-items: center;
+
+      &:hover {
+        background-color: #1F1F1F;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $special-font-color;
+      text-transform: uppercase;
+      display: inline-block;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.header__burger {
+  display: none;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #191B1C;
+  position: fixed;
+  z-index: 999;
+
+  &-top {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &:target {
+    display: block;
+  }
+
+  &-list {
+    list-style-type: none;
+  }
+
+  &-item {
+    display: flex;
+    padding: 0 18px;
+    height: 80px;
+    align-items: center;
+
+    &:hover {
+      background-color: #1F1F1F;
+    }
+  }
+
+  &-link {
+    text-decoration: none;
+    color: $special-font-color;
+    text-transform: uppercase;
+    display: inline-block;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+// #endregion
+
+// #region section-porten
+.porten {
+  z-index: 0;
+  position: relative;
+  padding: 80px 25px;
+  background-image: url('./images/porten/portenjpeg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 50%;
+
+  @media (min-width: 1024px) {
+    padding: 160px 0;
+  }
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__logo {
+    border: 4px solid white;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      width: 320px;
+      height: 320px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    text-decoration: underline;
+    font-family: "Post No Bills Jaffna Bold";
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $page-text-color;
+
+    @media (min-width: 1024px) {
+      font-size: 64px;
+    }
+
+    &::after {
+      content: '';
+      height: 0px;
+      width: 100%;
+      position: absolute;
+      top: 89%;
+      left: 0%;
+      border: 1px solid white;
+    }
+
+  }
+
+  &__city {
+    font-family: $special-font-family;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 28.47px;
+
+    @media (min-width: 768px) {
+      font-size: 15px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 22px;
+    }
+  }
+
+  &__description {
+    max-width: 730px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "PT Sans";
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: 200px;
+    max-width: 100%;
+
+    @media (min-width: 768px) {
+      max-width: 400px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 16px;
+      line-height: 24px;
+      max-width: 730px;
+    }
+  }
+}
+
+// #endregion
+
+// #region season und new
+.season-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    margin: 0;
+    align-items: stretch;
+    margin-bottom: 0px;
+  }
+}
+
+.season {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 93px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex-grow: 1;
+
+  @media (min-width: 1440px) {
+    width: 55%;
+  }
+
+  &__title {
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47.99px;
+    text-align: center;
+    margin-bottom: 100px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 120px;
+      border: 0.5px solid white;
+      position: absolute;
+      top: 75px;
+      left: 70px;
+    }
+  }
+
+  &__watches {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 400px;
+  }
+
+  &__watch {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 325px;
+    padding: 27px 22px 34px 22px;
+
+    &-image {
+      box-sizing: border-box;
+      width: 215px;
+      height: 264px;
+      background-color: #191B1C;
+      margin-bottom: 25px;
+    }
+
+    &-name {
+      margin-bottom: 10px;
+      font-family: "Playfair Display";
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23.99px;
+      text-align: left;
+    }
+
+    &-price {
+      font-family: "Playfair Display";
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21.33px;
+      text-align: left;
+      color: $price-color;
+    }
+  }
+}
+
+.new-collection {
+  position: relative;
+
+  z-index: 0;
+  position: relative;
+  padding: 80px 25px;
+  background-image: url('./images/season/man-sits.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @media (min-width: 1440px) {
+    width: 55%;
+  }
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+
+    @media (min-width: 1440px) {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__description {
+    margin: 0 auto;
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47.99px;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 60px;
+
+    &::after {
+      content: '';
+      width: 120px;
+      border: 0.5px solid white;
+      position: absolute;
+      top: 75px;
+      left: 92px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 47px;
+    width: 138px;
+    border: 1px solid white;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: "PT Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.29px;
+    letter-spacing: 0.1em;
+
+  }
+}
+
+// #endregion
+
+// #region man-collection
+.man-collection {
+  width: 100%;
+  display: flex;
+  background-color: #000000;
+  background-image: url('./images/nice-man/nice-man.jpeg');
+  box-sizing: border-box;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  position: relative;
+  z-index: 0;
+  padding-right: 0px;
+  padding: 0 25px 0;
+
+  @media (min-width: 768px) {
+    background-position: left;
+  }
+
+  @media (min-width: 1024px) {
+    background-size: 936px;
+    padding-top: 100px;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+
+  @media (min-width: 1768px) {
+    padding-right: 200px;
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    @media (min-width: 1768px) {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__description {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 47.99px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    position: relative;
+
+    @media (min-width: 768px) {
+      font-size: 36px;
+      line-height: 47.99px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 80px;
+    }
+
+    &::after {
+      content: '';
+      width: 120px;
+      border: 0.5px solid white;
+      position: absolute;
+      top: 75px;
+      left: 75px;
+    }
+  }
+
+  &__text {
+    font-family: "PT Sans";
+    font-size: 7px;
+    line-height: 10.5px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center;
+    max-width: 500px;
+
+    @media (min-width: 768px) {
+      font-size: 10px;
+      line-height: 15px;
+      max-width: 628px;
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 64px;
+      max-width: 628px;
+    }
+  }
+
+  &__link {
+    font-family: "PT Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.29px;
+    letter-spacing: 0.1em;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 28px
+  }
+}
+
+
+
+// #endregion
+
+// #region newcomers 
+.newcomers {
+  background-color: black;
+  padding: 120px 0 150px 0;
+  min-height: 1289px;
+  display: flex;
+  flex-direction: column;
+
+
+  &__title {
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47.99px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    margin-bottom: 121px;
+
+    &::after {
+      content: '';
+      width: 120px;
+      border: 0.5px solid white;
+      position: absolute;
+      left: 46%;
+      top: 120px;
+    }
+  }
+
+
+
+  &__watches {
+    display: flex;
+    gap: 23px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__watch {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    width: 260px;
+    height: 405px;
+    position: relative;
+
+    &--blur {
+      z-index: 0;
+    }
+
+    &--blur::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    &-button {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      padding: 12px 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid white;
+      position: absolute;
+      top: 25%;
+      z-index: 0;
+    }
+
+    &-link {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-image {
+      width: 100%;
+      height: 264px;
+      padding: 27px 34px;
+      margin-bottom: 25px;
+      background-color: #191B1C;
+
+      &--blur {
+        filter: blur(4px);
+        opacity: 0.9;
+      }
+    }
+
+    &-name {
+      margin-bottom: 10px;
+      font-family: "Playfair Display";
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23.99px;
+      text-align: left;
+    }
+
+    &-price {
+      font-family: "Playfair Display";
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21.33px;
+      text-align: left;
+      color: $price-color;
+    }
+  }
+}
+
+// #endregion
+
+// #region articles 
+.articles {
+  background-color: #0F0F0F;
+  padding-top: 63px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__title {
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47.99px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    margin-bottom: 95px;
+
+    &::after {
+      content: '';
+      width: 120px;
+      border: 0.5px solid white;
+      position: absolute;
+      top: 75px;
+      left: 45%;
+    }
+  }
+
+  &__article {
+    box-sizing: border-box;
+    min-height: 440px;
+    padding: 53px;
+    display: flex;
+    flex-direction: row-reverse;
+    background-repeat: no-repeat;
+    left: 0;
+    background-size: 989px 437px;
+    position: relative;
+    z-index: 0;
+
+    &--monocle {
+      background-image: url('./images/articles/monocle.png');
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.8);
+
+        @media (min-width: 1768px) {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+
+    &--golden {
+      background-image: url('./images/articles/goldenwatch.png');
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.8);
+
+        @media (min-width: 1768px) {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+
+    &--silver {
+      background-image: url('./images/articles/silverwatch.png');
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.8);
+
+        @media (min-width: 1768px) {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+
+    &-title {
+      font-family: "PT Sans";
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23.29px;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    &-text {
+      font-family: "PT Sans";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: left;
+      margin-bottom: 39px;
+      max-width: 628px;
+      box-sizing: border-box;
+    }
+
+    &-link {
+      padding: 12px 28px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      border: 1px solid white;
+      font-family: "PT Sans";
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23.29px;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    &-hashtags {
+      align-self: flex-end;
+    }
+
+    &-hashtag {
+      text-decoration: none;
+      color: white;
+      font-family: "PT Sans";
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23.29px;
+      letter-spacing: 0.1em;
+      text-align: right;
+    }
+
+    &-navigation {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+// #endregion
+
+// #region partners
+.partners {
+  background-color: #0F0F0F;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 100px 0px 100px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 90px 0px 106px;
+  }
+
+  &__title {
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47.99px;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 90px;
+    }
+
+    &::after {
+      content: '';
+      width: 120px;
+      border: 0.5px solid white;
+      position: absolute;
+      top: 75px;
+      left: 100px;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1350px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__partner {
+    &--coco {
+      width: 370px;
+    }
+
+    &--rolex {
+      width: 280px;
+    }
+
+    &--breguet {
+      width: 270px;
+    }
+
+    &--haven {
+      width: 376px;
+    }
+  }
+}
+
+// #endregion
+
+// #region footer 
+.footer {
+  background-image: url('./images/footer/footer-bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  padding: 80px 0 70px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__about {
+    max-width: 350px;
+    margin-right: 31px;
+
+    &-title {
+      font-family: "Playfair Display";
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 31.99px;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    &-text {
+      font-family: "PT Sans";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      max-height: 320px;
+      margin-bottom: 20px;
+
+      @media (min-width: 1024px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__categories {
+
+    &-title {
+      font-family: "Playfair Display";
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 31.99px;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+
+      @media (min-width: 1024px) {
+        gap: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &-link {
+      padding: 10px 20px;
+      background-color: black;
+      color: #D0D0D0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__press {
+    &-title {
+      font-family: "Playfair Display";
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 31.99px;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    &-text {
+      font-family: "PT Sans";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: left;
+      margin-bottom: 26px;
+      width: 350px;
+
+      @media (min-width: 1024px) {
+        width: 100%;
+      }
+    }
+
+    &-container {
+      display: flex;
+    }
+
+    &-email {
+      box-sizing: border-box;
+      padding-left: 20px;
+      width: 210px;
+      height: 42px;
+      background-color: rgba(110, 110, 110, 0.5);
+      border: none;
+      color: white;
+
+      &::placeholder {
+        color: rgb(192, 192, 192);
+      }
+    }
+
+    &-submit {
+      background-color: #0F0F0F;
+      color: white;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+// #endregion
+
+// #region special
+.special-footer {
+  font-family: "PT Sans";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.53px;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 0;
+
+  &__rights {
+    color: #D0D0D0;
+  }
+
+  &__terms {
+    color: #D0D0D0;
+    text-decoration: none;
+  }
+}
+
+// #endregion
+
+// #region carousel styles
+.carousel {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+// #endregion 

@@ -1,0 +1,1064 @@
+body,
+h1,
+div,
+p,
+span,
+img,
+ul,
+li,
+nav,
+header,
+footer,
+h2,
+h3,
+section,
+article,
+button,
+input,
+a,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  color: white;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Post No Bills Jaffna Bold";
+  src: url("/fonts/post-no-bills/PostNoBillsJaffna-Bold.woff");
+}
+@font-face {
+  font-family: "Post No Bills Jaffna ExtraBold Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/post-no-bills/PostNoBillsJaffna-ExtraBold.woff");
+}
+body {
+  min-width: 375px;
+  background-color: black;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1115px;
+  box-sizing: border-box;
+}
+
+.special {
+  padding: 14px 25px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+@media (min-width: 1024px) {
+  .special {
+    padding: 14px 0;
+  }
+}
+.special__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.special__info-list {
+  display: flex;
+  list-style: none;
+}
+.special__info-item {
+  padding: 0 15px;
+  border-right: 1px solid #969696;
+  color: #969696;
+}
+.special__info-item:first-child {
+  padding-left: 0;
+}
+.special__info-item:last-child {
+  border: none;
+}
+.special__login {
+  display: flex;
+  gap: 19px;
+}
+.special__login-link {
+  text-decoration: none;
+  color: #969696;
+}
+
+.header {
+  background-color: #0F0F0F;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+@media (min-width: 1024px) {
+  .header {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .header__menu-btn {
+    display: none;
+  }
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  box-sizing: border-box;
+}
+.header__logo {
+  font-family: "Post No Bills Jaffna Bold";
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__nav {
+    display: block;
+  }
+}
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.header__nav-item {
+  display: flex;
+  padding: 0 18px;
+  height: 80px;
+  align-items: center;
+}
+.header__nav-item:hover {
+  background-color: #1F1F1F;
+}
+.header__nav-link {
+  text-decoration: none;
+  color: #969696;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.header__nav-link:hover {
+  color: white;
+}
+
+.header__burger {
+  display: none;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #191B1C;
+  position: fixed;
+  z-index: 999;
+}
+.header__burger-top {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.header__burger:target {
+  display: block;
+}
+.header__burger-list {
+  list-style-type: none;
+}
+.header__burger-item {
+  display: flex;
+  padding: 0 18px;
+  height: 80px;
+  align-items: center;
+}
+.header__burger-item:hover {
+  background-color: #1F1F1F;
+}
+.header__burger-link {
+  text-decoration: none;
+  color: #969696;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.header__burger-link:hover {
+  color: white;
+}
+
+.porten {
+  z-index: 0;
+  position: relative;
+  padding: 80px 25px;
+  background-image: url("./images/porten/portenjpeg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 50%;
+}
+@media (min-width: 1024px) {
+  .porten {
+    padding: 160px 0;
+  }
+}
+.porten::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.porten__logo {
+  border: 4px solid white;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .porten__logo {
+    width: 320px;
+    height: 320px;
+  }
+}
+.porten__title {
+  position: relative;
+  text-decoration: underline;
+  font-family: "Post No Bills Jaffna Bold";
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+@media (min-width: 1024px) {
+  .porten__title {
+    font-size: 64px;
+  }
+}
+.porten__title::after {
+  content: "";
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 89%;
+  left: 0%;
+  border: 1px solid white;
+}
+.porten__city {
+  font-family: "PT Sans";
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28.47px;
+}
+@media (min-width: 768px) {
+  .porten__city {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .porten__city {
+    font-size: 22px;
+  }
+}
+.porten__description {
+  max-width: 730px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "PT Sans";
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  height: 200px;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .porten__description {
+    max-width: 400px;
+  }
+}
+@media (min-width: 1024px) {
+  .porten__description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 730px;
+  }
+}
+
+.season-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media (min-width: 1440px) {
+  .season-collection {
+    flex-direction: row;
+    margin: 0;
+    align-items: stretch;
+    margin-bottom: 0px;
+  }
+}
+
+.season {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 93px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+@media (min-width: 1440px) {
+  .season {
+    width: 55%;
+  }
+}
+.season__title {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 47.99px;
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+}
+.season__title::after {
+  content: "";
+  width: 120px;
+  border: 0.5px solid white;
+  position: absolute;
+  top: 75px;
+  left: 70px;
+}
+.season__watches {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 400px;
+}
+.season__watch {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 325px;
+  padding: 27px 22px 34px 22px;
+}
+.season__watch-image {
+  box-sizing: border-box;
+  width: 215px;
+  height: 264px;
+  background-color: #191B1C;
+  margin-bottom: 25px;
+}
+.season__watch-name {
+  margin-bottom: 10px;
+  font-family: "Playfair Display";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.99px;
+  text-align: left;
+}
+.season__watch-price {
+  font-family: "Playfair Display";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.33px;
+  text-align: left;
+  color: #D0D0D0;
+}
+
+.new-collection {
+  position: relative;
+  z-index: 0;
+  position: relative;
+  padding: 80px 25px;
+  background-image: url("./images/season/man-sits.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media (min-width: 1440px) {
+  .new-collection {
+    width: 55%;
+  }
+}
+.new-collection::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+@media (min-width: 1440px) {
+  .new-collection::before {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+.new-collection__description {
+  margin: 0 auto;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.new-collection__title {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 47.99px;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 60px;
+}
+.new-collection__title::after {
+  content: "";
+  width: 120px;
+  border: 0.5px solid white;
+  position: absolute;
+  top: 75px;
+  left: 92px;
+}
+.new-collection__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 47px;
+  width: 138px;
+  border: 1px solid white;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.29px;
+  letter-spacing: 0.1em;
+}
+
+.man-collection {
+  width: 100%;
+  display: flex;
+  background-color: #000000;
+  background-image: url("./images/nice-man/nice-man.jpeg");
+  box-sizing: border-box;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  position: relative;
+  z-index: 0;
+  padding-right: 0px;
+  padding: 0 25px 0;
+}
+@media (min-width: 768px) {
+  .man-collection {
+    background-position: left;
+  }
+}
+@media (min-width: 1024px) {
+  .man-collection {
+    background-size: 936px;
+    padding-top: 100px;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1768px) {
+  .man-collection {
+    padding-right: 200px;
+  }
+}
+.man-collection::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@media (min-width: 1768px) {
+  .man-collection::after {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+.man-collection__description {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.man-collection__title {
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 47.99px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .man-collection__title {
+    font-size: 36px;
+    line-height: 47.99px;
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .man-collection__title {
+    margin-bottom: 80px;
+  }
+}
+.man-collection__title::after {
+  content: "";
+  width: 120px;
+  border: 0.5px solid white;
+  position: absolute;
+  top: 75px;
+  left: 75px;
+}
+.man-collection__text {
+  font-family: "PT Sans";
+  font-size: 7px;
+  line-height: 10.5px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  text-align: center;
+  max-width: 500px;
+}
+@media (min-width: 768px) {
+  .man-collection__text {
+    font-size: 10px;
+    line-height: 15px;
+    max-width: 628px;
+    margin-bottom: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  .man-collection__text {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 64px;
+    max-width: 628px;
+  }
+}
+.man-collection__link {
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.29px;
+  letter-spacing: 0.1em;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px;
+}
+
+.newcomers {
+  background-color: black;
+  padding: 120px 0 150px 0;
+  min-height: 1289px;
+  display: flex;
+  flex-direction: column;
+}
+.newcomers__title {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 47.99px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  margin-bottom: 121px;
+}
+.newcomers__title::after {
+  content: "";
+  width: 120px;
+  border: 0.5px solid white;
+  position: absolute;
+  left: 46%;
+  top: 120px;
+}
+.newcomers__watches {
+  display: flex;
+  gap: 23px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.newcomers__watch {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  width: 260px;
+  height: 405px;
+  position: relative;
+}
+.newcomers__watch--blur {
+  z-index: 0;
+}
+.newcomers__watch--blur::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.newcomers__watch-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  position: absolute;
+  top: 25%;
+  z-index: 0;
+}
+.newcomers__watch-link {
+  display: flex;
+  flex-direction: column;
+}
+.newcomers__watch-image {
+  width: 100%;
+  height: 264px;
+  padding: 27px 34px;
+  margin-bottom: 25px;
+  background-color: #191B1C;
+}
+.newcomers__watch-image--blur {
+  filter: blur(4px);
+  opacity: 0.9;
+}
+.newcomers__watch-name {
+  margin-bottom: 10px;
+  font-family: "Playfair Display";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.99px;
+  text-align: left;
+}
+.newcomers__watch-price {
+  font-family: "Playfair Display";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.33px;
+  text-align: left;
+  color: #D0D0D0;
+}
+
+.articles {
+  background-color: #0F0F0F;
+  padding-top: 63px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.articles__title {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 47.99px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  margin-bottom: 95px;
+}
+.articles__title::after {
+  content: "";
+  width: 120px;
+  border: 0.5px solid white;
+  position: absolute;
+  top: 75px;
+  left: 45%;
+}
+.articles__article {
+  box-sizing: border-box;
+  min-height: 440px;
+  padding: 53px;
+  display: flex;
+  flex-direction: row-reverse;
+  background-repeat: no-repeat;
+  left: 0;
+  background-size: 989px 437px;
+  position: relative;
+  z-index: 0;
+}
+.articles__article--monocle {
+  background-image: url("./images/articles/monocle.png");
+}
+.articles__article--monocle::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@media (min-width: 1768px) {
+  .articles__article--monocle::after {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+.articles__article--golden {
+  background-image: url("./images/articles/goldenwatch.png");
+}
+.articles__article--golden::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@media (min-width: 1768px) {
+  .articles__article--golden::after {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+.articles__article--silver {
+  background-image: url("./images/articles/silverwatch.png");
+}
+.articles__article--silver::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@media (min-width: 1768px) {
+  .articles__article--silver::after {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+.articles__article-title {
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.29px;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.articles__article-text {
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  margin-bottom: 39px;
+  max-width: 628px;
+  box-sizing: border-box;
+}
+.articles__article-link {
+  padding: 12px 28px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.29px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+.articles__article-hashtags {
+  align-self: flex-end;
+}
+.articles__article-hashtag {
+  text-decoration: none;
+  color: white;
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.29px;
+  letter-spacing: 0.1em;
+  text-align: right;
+}
+.articles__article-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.partners {
+  background-color: #0F0F0F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 100px 0px 100px;
+}
+@media (min-width: 768px) {
+  .partners {
+    padding-bottom: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .partners {
+    padding: 90px 0px 106px;
+  }
+}
+.partners__title {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 47.99px;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .partners__title {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .partners__title {
+    margin-bottom: 90px;
+  }
+}
+.partners__title::after {
+  content: "";
+  width: 120px;
+  border: 0.5px solid white;
+  position: absolute;
+  top: 75px;
+  left: 100px;
+}
+.partners__container {
+  width: 100%;
+  max-width: 1350px;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: none;
+}
+@media (min-width: 768px) {
+  .partners__container {
+    display: block;
+  }
+}
+.partners__partner--coco {
+  width: 370px;
+}
+.partners__partner--rolex {
+  width: 280px;
+}
+.partners__partner--breguet {
+  width: 270px;
+}
+.partners__partner--haven {
+  width: 376px;
+}
+
+.footer {
+  background-image: url("./images/footer/footer-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  padding: 80px 0 70px 0;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .footer__container {
+    flex-direction: row;
+  }
+}
+.footer::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.footer__about {
+  max-width: 350px;
+  margin-right: 31px;
+}
+.footer__about-title {
+  font-family: "Playfair Display";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.99px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.footer__about-text {
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  max-height: 320px;
+  margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .footer__about-text {
+    margin-bottom: 0;
+  }
+}
+.footer__categories-title {
+  font-family: "Playfair Display";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.99px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.footer__categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .footer__categories-container {
+    gap: 0;
+    margin-bottom: 0;
+  }
+}
+.footer__categories-link {
+  padding: 10px 20px;
+  background-color: black;
+  color: #D0D0D0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__press-title {
+  font-family: "Playfair Display";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31.99px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.footer__press-text {
+  font-family: "PT Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  margin-bottom: 26px;
+  width: 350px;
+}
+@media (min-width: 1024px) {
+  .footer__press-text {
+    width: 100%;
+  }
+}
+.footer__press-container {
+  display: flex;
+}
+.footer__press-email {
+  box-sizing: border-box;
+  padding-left: 20px;
+  width: 210px;
+  height: 42px;
+  background-color: rgba(110, 110, 110, 0.5);
+  border: none;
+  color: white;
+}
+.footer__press-email::-moz-placeholder {
+  color: rgb(192, 192, 192);
+}
+.footer__press-email::placeholder {
+  color: rgb(192, 192, 192);
+}
+.footer__press-submit {
+  background-color: #0F0F0F;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.special-footer {
+  font-family: "PT Sans";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.53px;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 0;
+}
+.special-footer__rights {
+  color: #D0D0D0;
+}
+.special-footer__terms {
+  color: #D0D0D0;
+  text-decoration: none;
+}
+
+.carousel {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .carousel {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
