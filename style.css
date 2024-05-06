@@ -28,13 +28,13 @@ a,
 
 @font-face {
   font-family: "Post No Bills Jaffna Bold";
-  src: url("/fonts/post-no-bills/PostNoBillsJaffna-Bold.woff");
+  src: url("fonts/post-no-bills/PostNoBillsJaffna-Bold.woff");
 }
 @font-face {
   font-family: "Post No Bills Jaffna ExtraBold Regular";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/post-no-bills/PostNoBillsJaffna-ExtraBold.woff");
+  src: url("fonts/post-no-bills/PostNoBillsJaffna-ExtraBold.woff");
 }
 body {
   min-width: 375px;
@@ -45,6 +45,11 @@ body {
   margin: 0 auto;
   max-width: 1115px;
   box-sizing: border-box;
+}
+
+.container--max {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .special {
